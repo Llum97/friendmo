@@ -35,9 +35,9 @@ export default class RoundedTextboxExample extends Component {
           <Item>
             <Input placeholder="Amount" />
           </Item>
-          <Form>
-            <Textarea rowSpan={10} bordered placeholder="What was it for?" />
-          </Form>
+          <Item>
+            <Input placeholder="What was it for?" />
+          </Item>
           <Button><Text> Request </Text></Button>
         </Content>
         <TextInput onSubmitEditing={Keyboard.dismiss}>;
