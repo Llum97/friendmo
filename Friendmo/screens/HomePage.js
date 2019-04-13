@@ -4,7 +4,6 @@ export default class HomePage extends Component {
   render() {
     return (
       <Container>
-        <Header />
         <Content>
           <List>
             <ListItem avatar>

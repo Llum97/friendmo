@@ -7,6 +7,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SearchFriends from '../screens/SearchFriends';
 import SettingsScreen from '../screens/SettingsScreen';
 import HomePage from '../screens/HomePage';
+import MakePayment from '../screens/MakePayment';
 
 const HomeStack = createStackNavigator({
   Home: HomePage,
@@ -14,6 +15,22 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
+    />
+  ),
+};
+const PayStack = createStackNavigator({
+  Payment: MakePayment,
+});
+PayStack.navigationOptions = {
+  tabBarLabel: 'Payment',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -56,6 +73,7 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
+  PayStack,
   LinksStack,
   SettingsStack,
 });
